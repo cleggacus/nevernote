@@ -1,0 +1,45 @@
+@import 'src/vars';
+
+.notes-title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 1;
+  width: 100%;
+  height: $notes-title-height;
+  background-color: var(--bg-title);
+  box-shadow: 0px 0px 6px var(--box-shadow);
+
+  h2{
+    box-sizing: border-box;
+    width: $notes-menu-width;
+    padding: 0 $notes-menu-list-padding-side;
+    margin: 0;
+    color: var(--fg-title);
+  }
+
+  .spacer{
+    flex: 1;
+  }
+
+  input{
+    border-width: 0;
+    border-radius: 100px;
+    padding: 7px 15px;
+    background-color: var(--bg-title-ui);
+    color: var(--fg-title);
+    font-size: $notes-title-search-font-size;
+    margin: 0 $notes-menu-list-padding-side 0 0;
+  }
+
+  svg{
+    cursor: pointer;
+    opacity: 0.5;
+    padding: 7px $notes-menu-list-padding-side 7px 0;
+    stroke: var(--fg-nav);
+  }
+
+  svg:hover{
+    opacity: 0.9;
+  }
+}

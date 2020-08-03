@@ -1,0 +1,129 @@
+@import 'src/vars';
+
+.app-navbar{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  transition: width 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  background-color: var(--bg-nav);
+  width: $nav-width;
+  box-shadow: 0px 0px 6px var(--box-shadow);
+  z-index: 2;
+  user-select: none;
+
+  .theme-change{
+    div{
+      display: none;
+    }
+      
+    .active{
+      display: block !important;
+    }
+  }
+
+  li{
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: $nav-list-height;
+    padding: 0 $nav-list-padding-side;
+    margin: $nav-list-padding-top 0 0 0;
+    opacity: 0.4;
+
+    svg{
+      fill: none;
+      stroke: var(--fg-nav);
+      stroke-width: $nav-list-icon-weight;
+      height: 100%;
+    }
+
+    a{
+      padding: 0 0 0 $nav-list-padding-side;
+      flex: 1;
+      font-size: $nav-list-font-size;
+      font-weight: bolder !important;
+      color: var(--fg-nav);
+    }
+  }
+
+  li:hover{
+    opacity: 0.9;
+  }
+
+  .navbar-top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--bg-nav-top);
+    box-shadow: 0px 0px 2px var(--box-shadow);
+    width: 100%;
+    height: $notes-title-height;
+
+    .navbar-top-picture{
+      position: relative;
+      box-sizing: border-box;
+      border-radius: 100px;
+      height: $nav-list-height;
+      width: $nav-list-height;
+      margin: 0 0 0 $nav-list-padding-side;
+
+      img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        border-radius: 100px;
+        height: $nav-list-height;
+        width: $nav-list-height;
+      }
+    }
+
+    .navbar-top-username{
+      cursor: pointer;
+      margin: 0 0 0 $nav-list-padding-side;
+      color: var(--fg-nav);
+      font-weight: bolder !important;
+      opacity: 0.4;
+      flex: 1;
+    }
+
+    .navbar-top-username:hover{
+      opacity: 0.9;
+    }
+
+    .navbar-top-icon{
+      height: $nav-list-search-height;
+
+      svg{
+        fill: none;
+        stroke: var(--fg-nav);
+        stroke-width: $nav-list-icon-weight;
+        opacity: 0.4;
+        margin: 0 $nav-list-padding-side 0 0;
+        height: $nav-list-search-height;
+      }
+
+      svg:hover{
+        opacity: 0.9;
+      }
+    }
+
+    .navbar-top-picture:hover{
+      img{
+        filter: brightness(50%);
+      }
+    }
+  }
+
+  .bottom{
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+  }
+}
