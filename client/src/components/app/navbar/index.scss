@@ -4,7 +4,6 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  transition: width 0.3s ease-out;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -12,6 +11,9 @@
   background-color: var(--bg-nav);
   width: $nav-width;
   box-shadow: 0px 0px 6px var(--box-shadow);
+  border-style: solid;
+  border-width: 0 var(--border-width) 0 0;
+  border-color: var(--border-color);
   z-index: 2;
   user-select: none;
 
@@ -61,7 +63,6 @@
     flex-direction: row;
     align-items: center;
     background-color: var(--bg-nav-top);
-    box-shadow: 0px 0px 2px var(--box-shadow);
     width: 100%;
     height: $notes-title-height;
 
@@ -101,6 +102,7 @@
       height: $nav-list-search-height;
 
       svg{
+        cursor: pointer;
         fill: none;
         stroke: var(--fg-nav);
         stroke-width: $nav-list-icon-weight;

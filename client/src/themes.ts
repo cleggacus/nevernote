@@ -12,6 +12,8 @@ export interface Theme{
     fgContent: string;
     fgNotesMenu: string;
     boxShadow: string;
+    borderWidth: string;
+    borderColor: string;
   }
 }
 
@@ -29,39 +31,45 @@ const Themes = {
       fgTitle: '#ffffff',
       fgContent: '#ffffff',
       fgNotesMenu: '#ffffff',
-      boxShadow: '#0006'
+      boxShadow: '#0006',
+      borderWidth: '0px',
+      borderColor: '#0a0a0a'
     }
   } as Theme,
   light: {
     title: 'light',
     theme: {
-      bgNav: '#0e162f',
-      bgNavTop: '#081028',
-      bgTitle: '#131b35',
-      bgTitleUI: '#0e162f',
-      bgContent: '#131b35',
-      bgNotesMenu: '#131b35',
-      fgNav: '#ffffff',
-      fgTitle: '#ffffff',
-      fgContent: '#ffffff',
-      fgNotesMenu: '#ffffff',
-      boxShadow: '#0006'
+      bgNav: '#ffffff',
+      bgNavTop: '#ffffff',
+      bgTitle: '#ffffff',
+      bgTitleUI: '#f4f5fc',
+      bgContent: '#ffffff',
+      bgNotesMenu: '#ffffff',
+      fgNav: '#131b35',
+      fgTitle: '#131b35',
+      fgContent: '#131b35',
+      fgNotesMenu: '#131b35',
+      boxShadow: '#00000033',
+      borderWidth: '0px',
+      borderColor: '#ffffff'
     }
   } as Theme,
   black: {
     title: 'black',
     theme: {
-      bgNav: '#0e162f',
-      bgNavTop: '#081028',
-      bgTitle: '#131b35',
-      bgTitleUI: '#0e162f',
-      bgContent: '#131b35',
-      bgNotesMenu: '#131b35',
+      bgNav: '#000000',
+      bgNavTop: '#000000',
+      bgTitle: '#000000',
+      bgTitleUI: '#111111',
+      bgContent: '#000000',
+      bgNotesMenu: '#000000',
       fgNav: '#ffffff',
       fgTitle: '#ffffff',
       fgContent: '#ffffff',
       fgNotesMenu: '#ffffff',
-      boxShadow: '#0006'
+      boxShadow: '#00000000',
+      borderWidth: '1px',
+      borderColor: '#0a0a0a'
     }
   } as Theme
 }
@@ -82,6 +90,8 @@ const setTheme = (t: Theme) => {
   document.documentElement.style.setProperty('--fg-notes-menu', theme.fgNotesMenu);
 
   document.documentElement.style.setProperty('--box-shadow', theme.boxShadow);
+  document.documentElement.style.setProperty('--border-width', theme.borderWidth);
+  document.documentElement.style.setProperty('--border-color', theme.borderColor);
 }
 
 export {Themes, setTheme};

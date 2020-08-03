@@ -21,7 +21,7 @@ const Title = () => {
 
   return (
     <div className="notes-title">
-      <h2>NeverNote</h2>
+      <h3>NeverNote</h3>
       <div className="spacer"></div>
       <a onClick={toggleMarkDown}>{markdownState ? <Code/> : <Eye/>}</a>
       <a onClick={toggleBookmark}><Bookmark style={{fill:bookmarkState ? "var(--fg-nav)":"none"}}/></a>

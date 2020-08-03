@@ -9,8 +9,12 @@
   height: $notes-title-height;
   background-color: var(--bg-title);
   box-shadow: 0px 0px 6px var(--box-shadow);
+  border-style: solid;
+  border-width: 0 0 var(--border-width) 0;
+  border-color: var(--border-color);
 
-  h2{
+  h3{
+    opacity: 0.8;
     box-sizing: border-box;
     width: $notes-menu-width;
     padding: 0 $notes-menu-list-padding-side;
@@ -36,7 +40,7 @@
     cursor: pointer;
     opacity: 0.5;
     padding: 7px $notes-menu-list-padding-side 7px 0;
-    stroke: var(--fg-nav);
+    stroke: var(--fg-title);
   }
 
   svg:hover{

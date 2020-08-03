@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import {Theme} from '../../../themes';
+import {Theme, Themes} from '../../../themes';
 import { Link } from "react-router-dom";
 import './index.scss';
 import defaultPicture from '../../../assets/deault-profile-picture.png';
-import {ChevronDown, List, Grid, Bell} from 'react-feather';
+import {ChevronDown, List, Grid, Moon, Circle, Sun} from 'react-feather';
 
 interface IProps{
   theme: Theme;
@@ -24,9 +24,9 @@ const Navbar = (props: IProps) => {
           <ChevronDown/>
         </Link>
 
-        <Link className="navbar-top-icon" to="/notification" style={{ textDecoration: 'none' }}>
-          <Bell/>
-        </Link>
+        <a className="navbar-top-icon" onClick={() => props.toggleTheme()}>
+          {props.theme ==  Themes.dark ? <Moon/> : props.theme ==  Themes.black ? <Circle/> : <Sun/>}
+        </a>
       </div>
 
       <Link to="/" style={{ textDecoration: 'none' }}>
