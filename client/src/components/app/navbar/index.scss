@@ -3,7 +3,8 @@
 .app-navbar{
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 $nav-list-padding-top 0;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -37,25 +38,27 @@
     padding: 0 $nav-list-padding-side;
     margin: $nav-list-padding-top 0 0 0;
     opacity: 0.4;
+    flex: 1;
+    font-size: $nav-list-font-size;
+    font-weight: bolder !important;
+    color: var(--fg-nav);
+    
 
     svg{
       fill: none;
       stroke: var(--fg-nav);
       stroke-width: $nav-list-icon-weight;
+      padding: 0 $nav-list-padding-side 0 0;
       height: 100%;
-    }
-
-    a{
-      padding: 0 0 0 $nav-list-padding-side;
-      flex: 1;
-      font-size: $nav-list-font-size;
-      font-weight: bolder !important;
-      color: var(--fg-nav);
     }
   }
 
   li:hover{
     opacity: 0.9;
+  }
+
+  a{
+    text-decoration: none;
   }
 
   .navbar-top{
@@ -123,9 +126,7 @@
     }
   }
 
-  .bottom{
-    display: flex;
-    flex-direction: column;
-    margin-top: auto;
+  .navbar-bottom{
+    margin: auto 0 0 0;
   }
 }

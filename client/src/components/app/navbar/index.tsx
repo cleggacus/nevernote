@@ -1,47 +1,69 @@
 import React, { useState } from 'react';
 import {Theme, Themes} from '../../../themes';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import axios from "axios";
 import './index.scss';
-import defaultPicture from '../../../assets/deault-profile-picture.png';
-import {ChevronDown, List, Grid, Moon, Circle, Sun} from 'react-feather';
+import {ChevronDown, List, Grid, Moon, Circle, Sun, LogOut} from 'react-feather';
+import {User} from '../index';
 
 interface IProps{
   theme: Theme;
   toggleTheme: Function;
+  user: User;
 }
 
 const Navbar = (props: IProps) => {
+  const [redirectState, setRedirectState] = useState('');
+
+  const logout = () => {
+    axios.get('/api/user/logout')
+      .then((res) => {
+        setRedirectState('/');
+      }).catch((err) => {
+        setRedirectState('/');
+      });
+  }
+
   return (
     <ul className="app-navbar">
+      {redirectState ? <Redirect to={redirectState} /> : null}
+      
       <div className="navbar-top">
         <div className="navbar-top-picture">
-          <img src={defaultPicture} />
+          <img alt="" src={`uploads/${props.user.profilePicture}`} />
         </div>
 
-        <a className="navbar-top-username">Username</a>
+        <Link className="navbar-top-username" to="/">{props.user.username}</Link>
 
-        <Link className="navbar-top-icon" to="/" style={{ textDecoration: 'none' }}>
+        <Link className="navbar-top-icon" to="/">
           <ChevronDown/>
         </Link>
 
-        <a className="navbar-top-icon" onClick={() => props.toggleTheme()}>
-          {props.theme ==  Themes.dark ? <Moon/> : props.theme ==  Themes.black ? <Circle/> : <Sun/>}
-        </a>
+        <div className="navbar-top-icon" onClick={() => props.toggleTheme()}>
+          {props.theme ===  Themes.dark ? <Moon/> : props.theme === Themes.black ? <Circle/> : <Sun/>}
+        </div>
       </div>
 
-      <Link to="/" style={{ textDecoration: 'none' }}>
+      <Link to="/">
         <li className="navbar-item">
           <Grid/>
-          <a>Dashboard</a>
+          Dashboard
         </li>
       </Link>
 
-      <Link to="/notes" style={{ textDecoration: 'none' }}>
+      <Link to="/notes">
         <li className="navbar-item">
           <List/>
-          <a>All Notes</a>
+          All Notes
         </li>
       </Link>
+
+      <a href="/#" className="navbar-bottom">
+        <li onClick={logout} className="navbar-item">
+          <LogOut/>
+          Logout
+        </li>
+      </a>
     </ul>
   );
 }

@@ -23,10 +23,10 @@ const Title = () => {
     <div className="notes-title">
       <h3>NeverNote</h3>
       <div className="spacer"></div>
-      <a onClick={toggleMarkDown}>{markdownState ? <Code/> : <Eye/>}</a>
-      <a onClick={toggleBookmark}><Bookmark style={{fill:bookmarkState ? "var(--fg-nav)":"none"}}/></a>
+      <div className="icon" onClick={toggleMarkDown}>{markdownState ? <Code/> : <Eye/>}</div>
+      <div className="icon" onClick={toggleBookmark}><Bookmark style={{fill:bookmarkState ? "var(--fg-nav)":"none"}}/></div>
       <input placeholder="search . . ."></input>
-      <a onClick={toggleSearch}>{searchAllState ? <Folder/> : <File/>}</a>
+      <div className="icon" onClick={toggleSearch}>{searchAllState ? <Folder/> : <File/>}</div>
     </div>
   );
 }

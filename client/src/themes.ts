@@ -31,7 +31,7 @@ const Themes = {
       fgTitle: '#ffffff',
       fgContent: '#ffffff',
       fgNotesMenu: '#ffffff',
-      boxShadow: '#0006',
+      boxShadow: '#0005',
       borderWidth: '0px',
       borderColor: '#0a0a0a'
     }
@@ -49,7 +49,7 @@ const Themes = {
       fgTitle: '#131b35',
       fgContent: '#131b35',
       fgNotesMenu: '#131b35',
-      boxShadow: '#00000033',
+      boxShadow: '#0005',
       borderWidth: '0px',
       borderColor: '#ffffff'
     }

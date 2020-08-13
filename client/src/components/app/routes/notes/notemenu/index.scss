@@ -23,19 +23,15 @@
     padding: 0 $notes-menu-list-padding-side;
     margin: $notes-menu-list-padding-top 0 0 0;
     opacity: 0.4;
-
-    a{
-      flex: 1;
-      font-size: $notes-menu-list-font-size;
-      font-weight: bolder !important;
-      color: var(--fg-notes-menu);
-      padding: 0 0 0 $notes-menu-title-padding-side;
-    }
+    font-size: $notes-menu-list-font-size;
+    font-weight: bolder !important;
+    color: var(--fg-notes-menu);
 
     svg{
       fill: none;
       stroke: var(--fg-notes-menu);
       stroke-width: $nav-list-icon-weight;
+      padding: 0 $notes-menu-list-padding-side 0 0;
       height: 100%;
     }
   }
@@ -45,14 +41,10 @@
   }
 
   .menu-item-title{
-    opacity: 0.6;
+    opacity: 0.9;
     height: $notes-menu-title-height;
-
-    a{
-      flex: 1;
-      font-size: $notes-menu-title-font-size;
-      font-weight: bolder !important;
-      color: var(--fg-notes-menu);
-    }
+    font-size: $notes-menu-title-font-size;
+    font-weight: bolder !important;
+    color: var(--fg-notes-menu);
   }
 }
